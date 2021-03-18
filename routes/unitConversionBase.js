@@ -82,6 +82,8 @@ const replaceLatexFormulas = (stringFromMQ) => {
     stringFromMQ = stringFromMQ.replace(/\\class{strikethrough}{(\S+)}/, '$1');
     // remove backslash with whitespace
     stringFromMQ = stringFromMQ.replace(/\\ /g, ' ');
+    // remove whitespaces
+    stringFromMQ = stringFromMQ.replace(/\s+/, '');
     stringFromMQ = stringFromMQ.replace(/\\frac{(\S+)}{(\S+)}/, '$1/$2');
     // convert scientific notation
     stringFromMQ = stringFromMQ.replace(/\\cdot/g, '*');

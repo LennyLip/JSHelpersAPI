@@ -10,7 +10,8 @@ const { parseToValueUnit, replaceLatexFormulas } = require('./unitConversionBase
  * @param text: string from MathQuill latex
  */
 function convertMQToEvaluatedMath(text) {
-    const parsedToValUnit = parseToValueUnit(replaceLatexFormulas(text));
+    text = replaceLatexFormulas(text);
+    const parsedToValUnit = parseToValueUnit(text);
     // if parseToValueUnit is null then text have no units
     let newText = text.slice();
     if (parsedToValUnit) {
