@@ -38,6 +38,7 @@ router.post('/', function(req, res, next) {
     const mathLatex = req.body.mathLatex;
     if (!mathLatex) {
         res.send('mathLatex param required');
+        return false;
     }
     res.send(convertMQToEvaluatedMath(mathLatex));
 });
